@@ -1,0 +1,76 @@
+:root{
+  --bg:#0b1225; --panel:#141a33; --stroke:#222b53; --field:#0f1530;
+  --text:#e9ecf7; --muted:#a8b0c6; --primary:#7c5cff; --primary-2:#6a49ff;
+  --ring:#86b7ff; --radius:14px;
+}
+
+/* base */
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+}
+
+/* container do conteúdo */
+.cv-wrap{
+  min-height:100dvh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+/* card do formulário */
+.cv-card{
+  width:100%;
+  max-width:640px; /* ajuste se quiser menor: 560px, 500px… */
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+  padding:28px;
+}
+
+.cv-title{margin:0 0 6px;font-weight:900;font-size:28px}
+.cv-sub{margin:0 0 18px;color:var(--muted);font-size:14px}
+.cv-form{display:grid;gap:14px}
+.cv-field label{display:block;font-weight:700;margin-bottom:8px}
+
+/* inputs */
+.cv-input,.cv-select,.cv-textarea{
+  width:100%;
+  border:1px solid var(--stroke);
+  background:var(--field);
+  color:var(--text);
+  border-radius:var(--radius);
+  padding:12px 14px;
+  outline:0;
+  transition:.18s ease;
+}
+.cv-input:focus,.cv-select:focus,.cv-textarea:focus{
+  border-color:var(--ring);
+  box-shadow:0 0 0 4px color-mix(in oklab,var(--ring) 26%,transparent);
+}
+
+/* erros */
+.cv-error{color:#ff7676;font-size:.9rem;margin-top:6px}
+
+/* upload */
+.cv-file{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cv-file-input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.cv-file-name{font-size:.95rem;color:var(--muted)}
+
+/* botões */
+.cv-btn{border:0;cursor:pointer;font-weight:800;border-radius:12px;padding:10px 14px}
+.cv-btn-primary{
+  background:linear-gradient(180deg,var(--primary),var(--primary-2));
+  color:#fff;
+  box-shadow:0 14px 30px color-mix(in oklab,var(--primary) 35%,transparent);
+}
+.cv-btn-primary:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.cv-btn-ghost{background:transparent;color:var(--text);border:1px solid var(--stroke)}
+.cv-btn-ghost:hover{background:rgba(255,255,255,.03)}
+.cv-btn-file{background:#1a2245;color:#e4eaff;border:1px solid var(--stroke)}
+
+.cv-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
